@@ -1,6 +1,5 @@
-require 'pry'
 class AnagramGenerator
-  attr_accessor :word, :words, :split_word
+  attr_accessor :word, :words, :letters
   def initialize(word)
     @word = word
     @words = []
@@ -10,14 +9,14 @@ class AnagramGenerator
     if word == ''
       raise ArgumentError, "It can't be a blank string"
     else
-      @words = split_word_to_letter.permutation.map(&:join)
+      words = split_word_to_letter.permutation.map(&:join)
+      words.shift
     end
-    @words.shift
-    @words
+    words
   end
 
   def split_word_to_letter
-    split_word = word.split('')
-    split_word
+    letters = word.split('')
+    letters
   end
 end

@@ -1,7 +1,6 @@
 require_relative 'anagram_generator.rb'
 
 describe AnagramGenerator do
-  it 'creates new words by switching positions of letters'
 
   it 'returns an argument message if a blanks string is passed' do
     expect { AnagramGenerator.new('').generate }.to raise_error(ArgumentError, "It can't be a blank string")
